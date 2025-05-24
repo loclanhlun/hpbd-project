@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="start-screen"
+      style="
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 182, 193, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        cursor: pointer;
+      "
+    >
+      <div style="text-align: center; color: white">
+        <h1>💝 Click anywhere to start 💝</h1>
+      </div>
+    </div>
+
+    <audio id="background-music" loop>
+      <source src="./HonCaYeu-DucPhuc-6222425.mp3" type="audio/mp3" />
+    </audio>
+    <div class="section">
+      <div class="container">
+        <div class="heart-overlay">♥</div>
+        <div class="content1">Gửi em yêu Thu Thảo của anh</div>
+        <div class="content2">
+          Hôm nay là ngày 27/05/2025, cũng là ngày em yêu của anh được sinh ra
+        </div>
+        <div class="content3">
+          Chúc cho em yêu của anh sinh nhật thật vui vẻ, hạnh phúc ♥
+        </div>
+        <div class="content4">
+          Chúc cho tình cảm của chúng ta sẽ luôn đẹp và đẹp hơn bây giờ em nhé ♥
+        </div>
+        <div class="content5">Anh Yêu Em nhiều lắm ♥</div>
+        <div class="heart1">♥</div>
+        <div class="heart2">♥</div>
+        <div class="heart3">♥</div>
+        <div class="heart4">♥</div>
+        <div class="heart5">♥</div>
+        <div class="heart6">♥</div>
+        <div class="heart7">♥</div>
+        <div class="hello-kitty1">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty2">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty3">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty4">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty5">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty6">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty7">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+        <div class="hello-kitty8">
+          <img
+            src="./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png"
+            alt="Hello Kitty"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleScroll() {
+        const scrollPosition = window.scrollY;
+        const heart = document.querySelector(".heart-overlay");
+        const content1 = document.querySelector(".content1");
+        const content2 = document.querySelector(".content2");
+        const content3 = document.querySelector(".content3");
+        const content4 = document.querySelector(".content4");
+        const content5 = document.querySelector(".content5");
+        if (scrollPosition == 0) {
+          heart.style.opacity = 1;
+          content1.style.opacity = 0;
+          content2.style.opacity = 0;
+          content3.style.opacity = 0;
+          content4.style.opacity = 0;
+          content5.style.opacity = 0;
+        } else {
+          // Gradually fade out heart
+          heart.style.opacity = Math.max(0, 1 - scrollPosition / 200);
+
+          // Gradually fade in content1
+          if (scrollPosition > 200) {
+            content2.style.opacity = 0;
+            content3.style.opacity = 0;
+            content4.style.opacity = 0;
+            content5.style.opacity = 0;
+            content1.style.opacity = Math.min(1, (scrollPosition - 200) / 100);
+          }
+
+          if (scrollPosition > 700) {
+            content1.style.opacity = 0;
+            content3.style.opacity = 0;
+            content4.style.opacity = 0;
+            content5.style.opacity = 0;
+            content2.style.opacity = Math.min(1, (scrollPosition - 200) / 100);
+          }
+
+          if (scrollPosition > 1300) {
+            content2.style.opacity = 0;
+            content1.style.opacity = 0;
+            content4.style.opacity = 0;
+            content5.style.opacity = 0;
+            content3.style.opacity = Math.min(1, (scrollPosition - 200) / 100);
+          }
+
+          if (scrollPosition > 1800) {
+            content1.style.opacity = 0;
+            content2.style.opacity = 0;
+            content3.style.opacity = 0;
+            content5.style.opacity = 0;
+            content4.style.opacity = Math.min(1, (scrollPosition - 200) / 100);
+          }
+
+          if (scrollPosition > 2300) {
+            content1.style.opacity = 0;
+            content2.style.opacity = 0;
+            content3.style.opacity = 0;
+            content4.style.opacity = 0;
+            content5.style.opacity = Math.min(1, (scrollPosition - 200) / 100);
+          }
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+    </script>
+
+    <script>
+      const startScreen = document.getElementById("start-screen");
+      const music = document.getElementById("background-music");
+
+      // Start everything when user clicks
+      startScreen.addEventListener("click", function () {
+        // Play music
+        music.currentTime = 0;
+        music.play();
+
+        // Hide start screen
+        startScreen.style.display = "none";
+
+        // Make sure music loops
+        music.addEventListener("ended", function () {
+          music.currentTime = 30;
+          music.play();
+        });
+      });
+    </script>
+  </body>
+</html>
