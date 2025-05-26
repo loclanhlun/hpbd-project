@@ -387,14 +387,16 @@
       /* Responsive design */
       @media (max-width: 768px) {
         .message-card {
-          padding: 30px 20px;
+          padding: 25px 20px;
           margin: 10px;
+          width: 90%;
         }
         .message-card h2 {
-          font-size: 2em;
+          font-size: 2.2em;
         }
         .message-card p {
-          font-size: 1.1em;
+          font-size: 1.4em;
+          line-height: 1.4;
         }
         .hello-kitty {
           width: 67px;
@@ -402,7 +404,34 @@
           font-size: 1.2em;
         }
         .heart {
-          font-size: 1.5em;
+          font-size: 1.8em;
+        }
+        .sparkle {
+          font-size: 1.8em;
+        }
+        a[href*="m.me"] {
+          font-size: 1.4em !important;
+          padding: 20px 25px !important;
+          white-space: normal !important;
+          max-width: 90% !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .message-card {
+          padding: 20px 15px;
+        }
+        .message-card h2 {
+          font-size: 2.4em;
+        }
+        .message-card p {
+          font-size: 1.6em;
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+        #start-screen h1 {
+          font-size: 2.2em;
+          padding: 0 20px;
         }
       }
 
