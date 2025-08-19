@@ -1,23 +1,19 @@
+/* Reset cơ bản */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Comic Sans MS", "Poppins", cursive, sans-serif;
 }
 
+/* Toàn trang */
 body {
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(45deg, #ffe6f2, #ffd9ec, #ffcce6);
   overflow-x: hidden;
-  background-color: #ffb6c1;
+  color: #ff1a75;
 }
 
-.section {
-  width: 100%;
-  height: 1500vh;
-  position: relative;
-}
-
+/* Container chính */
 .container {
   display: flex;
   justify-content: center;
@@ -27,16 +23,127 @@ body {
   z-index: 1;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
+.scrollable-content {
+  height: 400vh; /* 4 section */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+/* Card chúc mừng */
+.message-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.message-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 520px;
+  border: 3px solid #ff6b9d;
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+.message-card h2 {
+  color: #ff1a75;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.message-card p {
+  color: #ff4d94;
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Hello Kitty decorations */
+.hello-kitty {
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  background: transparent;
+  background-image: url("./adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof.png");
+  background-size: cover;
+  background-position: center;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.kitty1 { top: 10%; left: 5%; animation-delay: 0s; }
+.kitty2 { top: 15%; right: 8%; animation-delay: 0.5s; }
+.kitty3 { top: 60%; left: 10%; animation-delay: 1s; }
+.kitty4 { bottom: 15%; right: 12%; animation-delay: 1.5s; }
+.kitty5 { top: 35%; left: 3%; animation-delay: 2s; }
+.kitty6 { top: 45%; right: 5%; animation-delay: 2.5s; }
+.kitty7 { bottom: 20%; left: 8%; animation-delay: 3s; }
+.kitty8 { bottom: 25%; right: 15%; animation-delay: 3.5s; }
+.kitty9 { top: 25%; left: 15%; animation-delay: 4s; }
+.kitty10 { bottom: 10%; left: 20%; animation-delay: 4.5s; }
+
+/* Tim bay */
+.heart {
+  position: absolute;
+  font-size: 2em;
+  animation: float 3s ease-in-out infinite;
+  text-shadow: 0 2px 10px rgba(255, 20, 147, 0.5);
+}
+
+.heart1 { top: 12%; left: 40%; animation-delay: 0.5s; }
+.heart2 { top: 20%; right: 25%; animation-delay: 1s; }
+.heart3 { bottom: 25%; right: 20%; animation-delay: 1.5s; }
+.heart4 { bottom: 35%; left: 30%; animation-delay: 2s; }
+.heart5 { top: 40%; left: 20%; animation-delay: 2.5s; }
+
+/* Lấp lánh */
+.sparkle {
+  position: absolute;
+  color: #ffb3d9;
+  font-size: 1.5em;
+  animation: sparkle 2s linear infinite;
+}
+
+.sparkle1 { top: 18%; left: 55%; animation-delay: 0s; }
+.sparkle2 { top: 35%; right: 15%; animation-delay: 0.7s; }
+.sparkle3 { bottom: 30%; left: 45%; animation-delay: 1.4s; }
+
+/* Start screen */
+#start-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 182, 193, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+}
+
+#start-screen h1 {
+  font-size: 2em;
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff1a75;
+  font-size: 2em;
+  animation: bounce 2s infinite;
 }
 
 .heart1,
@@ -188,97 +295,51 @@ body {
   }
 }
 
-.heart-overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 700px;
-  color: rgb(206 38 63 / 50%);
-  animation: pulse 2s infinite;
-  z-index: 10;
-  transition: all 0.5s ease-in-out;
-}
-.heart-overlay::before {
-  width: 250px;
-  text-align: center;
-  content: "Happy Birthday My Love";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 36px;
-  color: rgb(255 255 255);
-  z-index: 10;
-}
-.content4,
-.content5,
-.content3,
-.content2,
-.content1 {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: rgba(0, 0, 0, 0.8);
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  text-align: center;
-  font-weight: bold;
+/* Keyframes */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes cardFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
-.video-container video {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
+@keyframes glow {
+  0% { text-shadow: 2px 2px 4px rgba(255, 26, 117, 0.3); }
+  50% { text-shadow: 2px 2px 15px rgba(255, 26, 117, 0.7); }
+  100% { text-shadow: 2px 2px 4px rgba(255, 26, 117, 0.3); }
 }
 
-.video-show {
-  opacity: 1;
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0) rotate(360deg); }
 }
 
-/* Add styles for additional sections */
-.second-section {
-  background-color: #ff9eb5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-.third-section {
-  background-color: #ff8aa4;
+/* Responsive */
+@media (max-width: 768px) {
+  .message-card { padding: 25px 20px; width: 90%; }
+  .message-card h2 { font-size: 2.2em; }
+  .message-card p { font-size: 1.2em; }
+  .hello-kitty { width: 70px; height: 60px; }
+  .heart { font-size: 1.6em; }
+  .sparkle { font-size: 1.2em; }
 }
 
-/* Responsive styles for mobile */
-@media screen and (max-width: 768px) {
-  .heart-overlay {
-    font-size: 430px;
-  }
-
-  .content1,
-  .content2,
-  .content3,
-  .content4,
-  .content5 {
-    width: 330px;
-  }
+@media (max-width: 480px) {
+  .message-card h2 { font-size: 2em; }
+  .message-card p { font-size: 1.1em; }
+  #start-screen h1 { font-size: 1.6em; }
 }
+
+
